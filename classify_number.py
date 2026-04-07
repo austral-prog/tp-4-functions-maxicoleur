@@ -1,7 +1,10 @@
 # ---- Funciones provistas (NO modificar) ----
+from pstats import add_func_stats
+
 
 def is_even(n):
     """Dado un número entero n, retorna True si es par, False si es impar."""
+
     return n % 2 == 0
 
 def is_positive(n):
@@ -22,4 +25,18 @@ def classify_number(n):
       - "negative odd"    (negativo e impar)
       - "zero"            (el número es 0)
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    if is_even(n)==True:
+        if n==0:
+            return "zero"
+        elif is_positive(n)==True:
+            return "positive even"
+        elif is_positive(n)==False:
+            return "negative even"
+    elif is_even(n)==False:
+        if is_positive(n)==True:
+            return "positive odd"
+        elif is_positive(n)==False:
+            return "negative odd"
+
+
+
